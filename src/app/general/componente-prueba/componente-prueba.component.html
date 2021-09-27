@@ -1,0 +1,53 @@
+
+<h2>{{Curso}}</h2>
+<p>Fecha de hoy: {{Fecha  | date:'yyyy-MM-dd'}}</p>
+<p>Fecha de hoy: {{Fecha1}}</p>
+<p>Fecha de hoy: {{Fecha2}}</p>
+<p>Mes actual: {{ getMes }}</p>
+
+<!-- el llamado al get de una variable -->
+<br>
+<!-- ngif -->
+<button class="btn btn-primary" (click)="obtenerMes()">Darle formato a la fecha</button>
+<!-- se gatilla la funcion que modifica internamente la variable -->
+<p>Fecha: {{ Dia2 }}</p>
+
+
+<hr>
+
+<button class="btn btn-primary" (click)="sumar()">Sumar</button>
+<h3>{{getContador}}</h3>
+<button class="btn btn-primary" (click)="restar()">Restar</button>
+<hr>
+
+<input  #nuevo type="text" class="form-control" placeholder="Valor a ingresar" id="agregado">
+<button class="btn btn-primary" (click)="agregar(nuevo.value)">Agregar</button>
+
+
+<hr>
+<button class="btn btn-primary" (click)="obtenerDia()">Obtener día</button>
+<!-- ngFor -->
+<ul>
+    <li *ngFor="let dia of dias_semana; let i = index" >
+
+        <b *ngIf="getDia2 == i; else noEsElDia"> 
+            {{dia}}
+        </b> 
+
+        <ng-template #noEsElDia>
+            {{dia}}
+        </ng-template> 
+    </li>
+
+
+</ul>
+
+
+<button class="btn btn-primary" (click)="eliminarDia()">Restar</button>
+
+<h3>el elemento eliminado es: {{Eliminado}}</h3>
+<hr>
+
+
+
+<hr>

@@ -13,6 +13,8 @@ import { RegistrarseComponent } from './general/registrarse/registrarse.componen
 import { HomeComponent } from './general/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PaginaEnConstruccion404Component } from './general/pagina-en-construccion404/pagina-en-construccion404.component';
+import { ComponentePruebaComponent } from './general/componente-prueba/componente-prueba.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,11 +27,13 @@ import { PaginaEnConstruccion404Component } from './general/pagina-en-construcci
     LoginComponent,
     RegistrarseComponent,
     HomeComponent,
-    PaginaEnConstruccion404Component
+    PaginaEnConstruccion404Component,
+    ComponentePruebaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule, //siempre se debe importar para submits
   ],
   providers: [],
   bootstrap: [AppComponent]

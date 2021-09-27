@@ -1,15 +1,18 @@
-
-
 <div class="container">
     <div>
-        <label id="h2d" for="basic-url" class="form-label">Log in</label>
-        <br>
-        <label for="" class="">Nombre Usuario: </label>
-        <input id="Usuarioid" type="text" class="nota form-control condicion">
-        <label for="" class="">Contraseña: </label>
-        <input id="Contrasenaid" type="text" class="nota form-control condicion">
-        <a id="registrarse" type="button" class="btn btn-primary" href="registrarse"> Registrarse </a>
-        <a id="Log" type="button" class="btn btn-primary" > Entrar </a>
-        <br>
+        <form (submit)="insertar()">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input [(ngModel)]="email" name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input [(ngModel)]="password" name="password" type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <a id="registrarse" type="button" class="btn btn-primary" href="registrarse"> Registrarse </a>
+            <button type="submit" class="btn btn-primary">Ingresar</button>
+        </form>
+        <h3>{{Anuncio}}</h3>
     </div>
 </div>

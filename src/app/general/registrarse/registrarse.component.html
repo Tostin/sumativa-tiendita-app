@@ -1,28 +1,68 @@
 <div class="container">
-    <label id="h1d" for="basic-url" class="form-label">Registrarse</label>
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="input1">Nombre Usuario: </span>
-        <input type="text" class="form-control" aria-label="Sizing example input"
-            aria-describedby="inputGroup-sizing-default">
-    </div>
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="input2">Email: </span>
-        <input type="text" class="form-control" aria-label="Sizing example input"
-            aria-describedby="inputGroup-sizing-default">
-    </div>
-    <div class="input-group  mb-3">
-        <span class="input-group-text" id="input3">Contraseña: </span>
-        <input type="text" class="form-control" aria-label="Sizing example input"
-            aria-describedby="inputGroup-sizing-default">
-    </div>
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="input4">Confirmar contraseña: </span>
-        <input type="text" class="form-control" aria-label="Sizing example input"
-            aria-describedby="inputGroup-sizing-default">
-    </div>
+    <!-- <form (submit)="ingresar()">
+        <label id="h1d" for="basic-url" class="form-label">Registrarse</label>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="input1">Nombre Usuario: </span>
+            <input #usuarioInput type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="input2">Email: </span>
+            <input #emailInput type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group  mb-3">
+            <span class="input-group-text" id="input3">Contraseña: </span>
+            <input #contra type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="input4">Confirmar contraseña: </span>
+            <input #confContra type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
 
-    <a id="registrarse" type="button" class="btn btn-primary" href="Login"> Volver </a>
-    <button class="btn btn-success" type="submit" disabled> Registrarse </button>
+        <a id="registrarse" type="button" class="btn btn-primary" href="Login"> Volver </a>
+        <button id="Reg" class="btn btn-success"
+            (click)="tomarRegistro(usuarioInput.value, emailInput.value, contra.value, confContra.value)"> Registrarse
+        </button>
+        <h3>{{Anuncio}}</h3>
+    </form> -->
 
+    <form (ngSubmit) = "insertar()">
+        <h2>Registro</h2> 
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input [(ngModel)]="nombre" name="nombre" type="nombre" class="form-control" id="nombre" placeholder="Nombre" aria-describedby="nombreHelp">
+            <div id="nombreHelp" class="form-text">Nunca compartiremos su nombre  con nadie más.</div>
+        </div> 
+        <div class="mb-3">
+            <label for="apellido" class="form-label">Apellido</label>
+            <input [(ngModel)]="apellido" name="apellido" type="apellido" class="form-control" id="apellido" placeholder="Apellido" aria-describedby="apellidoHelp">
+            <div id="apellidoHelp" class="form-text"></div>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Correo Electronico</label>
+            <input [(ngModel)]="email" name="email" type="email" class="form-control" id="email" placeholder="ejemplo@ejemplo.com" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text"></div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input [(ngModel)]="password" name="password" type="password" class="form-control"  id="password" placeholder="Contraseña">
+        </div>
+        <a id="registrarse" type="button" class="btn btn-primary" href="Login"> Volver </a>
+        <button type="submit" class="btn btn-success">Ingresar</button>
 
+    </form>
+    <h3>{{Anuncio}}</h3>
+    <hr>
+
+    {{nombre}}
+    <br>
+    {{apellido}}
+    <br>
+    {{email}} 
+    <br>
+    {{password}} 
+    <hr>
 </div>
