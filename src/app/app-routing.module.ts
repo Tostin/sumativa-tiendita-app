@@ -5,6 +5,7 @@ import { LoginComponent } from './general/login/login.component';
 import { PaginaEnConstruccion404Component } from './general/pagina-en-construccion404/pagina-en-construccion404.component';
 import { ProductoComponent } from './general/producto/producto.component';
 import { RegistrarseComponent } from './general/registrarse/registrarse.component';
+import { InformacionComponent } from './general/informacion/informacion.component';
 
 
 // referencias a los componentes 
@@ -14,6 +15,7 @@ const app_routes: Routes = [
     { path: 'producto', component: ProductoComponent },
     { path: 'registrarse', component: RegistrarseComponent},
     { path: 'Login', component: LoginComponent},
+    { path: 'Info', component: InformacionComponent},
     { path:'**', component: PaginaEnConstruccion404Component},
 
 ];

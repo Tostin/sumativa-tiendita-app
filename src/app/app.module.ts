@@ -15,6 +15,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { PaginaEnConstruccion404Component } from './general/pagina-en-construccion404/pagina-en-construccion404.component';
 import { ComponentePruebaComponent } from './general/componente-prueba/componente-prueba.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { InformacionComponent } from './general/informacion/informacion.component';
 
 @NgModule({
   declarations: [
@@ -28,12 +30,14 @@ import { FormsModule } from '@angular/forms';
     RegistrarseComponent,
     HomeComponent,
     PaginaEnConstruccion404Component,
-    ComponentePruebaComponent
+    ComponentePruebaComponent,
+    InformacionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule, //siempre se debe importar para submits
+    FormsModule, //siempre se debe importar para submits por los ngModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

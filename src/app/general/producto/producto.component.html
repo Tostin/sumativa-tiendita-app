@@ -1,42 +1,79 @@
 <div class="container">
-    <label id="h3d" for="basic-url" class="form-label">Productos</label>
+    <label id="h3d" for="basic-url" class="form-label">Productos
+        <form (submit)="buscar()" class="d-flex">
+            <input [(ngModel)]="buscado" name="buscado" class="form-control me-2" type="search" placeholder="Buscar"
+                aria-label="Buscar">
+            <button class="btn btn-success" type="submit">Buscar</button>
+        </form>
+    </label>
     <br>
-    <table class="table table-primary">
+    <!-- una variable compartida y un ngif -->
+    <table class="table table-primary ">
         <thead>
+
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Icono</th>
+                <th scope="col">Pintura</th>
+                <th scope="col">Contenido</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Acción</th>
+
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of pinturasService.listita_pinturitas['pinturas']">
+            <!-- productosService.lista_productos['productos'] -->
+            <!-- *ngIf="item.nombre == buscado" -->
+
+            <tr *ngIf="item.nombre == buscado || item.id == buscado || buscado == null || buscado == ''">
+                <th scope="row">{{item.id}}</th>
+                <td> <img src="assets/img/{{item.nombre}}.jpg" style="width: 100px; height: 100px"
+                        alt="[imagen no encontrada]"> </td>
+                <td>{{item.nombre}}</td>
+                <td> {{item.contenido}} galon/es</td>
+                <td> {{item.cantidad}} </td>
+                <td>${{item.precio}}</td>
+                <td>
+                    <button (click)="updateInfo(item.id)" type="submit" class="btn btn-success"
+                        routerLinkActive="active" routerLink="/Info">Información</button> <br>
+
+                    <hr>
+                    <button type="button" (click)="agregarCarrito(item.id, item.precio)" class="btn btn-success">Comprar</button>
+
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+    <label id="h3d" for="basic-url" class="form-label">Carrito de Compras</label>
+    <table class="table table-info ">
+        <thead>
+
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">Código</th>
-                <th scope="col">Stock</th>
-                <th scope="col">Icono</th>
+                <th scope="col">Precio</th>
                 <th scope="col">Acción</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mantequilla suprema</td>
-                <td>1234AB23f</td>
-                <td>10</td>
-                <td> <img src="assets/img/" alt="[imagen no encontrada]">   </td>
-                <td><button type="button" class="btn btn-success">Información</button></td>
-                
+        <tbody *ngFor="let item of pinturasService.listita_pinturitas['pinturas']; index as i">
+            <!-- productosService.lista_productos['productos'] -->
+            <!-- *ngIf="item.nombre == buscado" -->
+
+            <tr *ngFor="let item1 of carrito_Compras">
+                <th scope="row" *ngIf="item1 == (i+1)">{{item.id}}</th>
+                <td *ngIf="item1 == (i+1)">{{item.nombre}}</td>
+                <td *ngIf="item1 == (i+1)">${{item.precio}}</td>
+                <td *ngIf="item1 == (i+1)">
+                    <button type="button" (click)="eliminarDeCarrito(item1, item.precio)" class="btn btn-success">Eliminar</button>
+                </td>
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>[imagen]</td>
-                <td><button type="button" class="btn btn-success">Información</button></td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">.</td>
-                <td>.</td>
-                <td>[imagen]</td>
-                <td><button type="button" class="btn btn-success">Información</button></td>
-            </tr>
+
+
         </tbody>
     </table>
+    <label id="h3d" for="basic-url" class="form-label">Total a Pagar: ${{total}}</label>
+
 </div>

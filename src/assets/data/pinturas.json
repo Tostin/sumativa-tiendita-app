@@ -1,0 +1,53 @@
+{
+    "pinturas": [
+        {
+            "id": 1,
+            "nombre": "Rojo",
+            "descripcion": "rojo muy rojo",
+            "contenido": 2,
+            "cantidad": 10,
+            "precio": 3500
+
+        },
+        {
+            "id": 2,
+            "nombre": "Azul",
+            "descripcion": "Azul muy azul",
+            "contenido": 2,
+            "cantidad": 15,
+            "precio": 3500
+        },
+        {
+            "id": 3,
+            "nombre": "Amarillo",
+            "descripcion": "Amarillo muy Amarillo",
+            "contenido": 2,
+            "cantidad": 15,
+            "precio": 3500
+        },
+        {
+            "id": 4,
+            "nombre": "Margenta",
+            "descripcion": "Margenta muy Margenta",
+            "contenido": 1,
+            "cantidad": 6,
+            "precio": 1600
+        },
+        {
+            "id": 5,
+            "nombre": "Dorado",
+            "descripcion": "Dorado muy Dorado",
+            "contenido": 1,
+            "cantidad": 2,
+            "precio": 2500
+        },
+        {
+            "id": 6,
+            "nombre": "Plateado",
+            "descripcion": "Plateado muy Plateado",
+            "contenido": 1,
+            "cantidad": 4,
+            "precio": 2500
+        }
+    ]
+}

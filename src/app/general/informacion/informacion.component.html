@@ -1,0 +1,12 @@
+<!-- <p>informacion works! {{valorID}} -</p> -->
+<!-- <button  id="modal" (ngOnInit)="updateValor()" class="btn btn-success" type="button">Mostrar Información</button> -->
+
+<div *ngFor="let item of pinturasService.listita_pinturitas['pinturas']" class="card" style="width: 18rem;">
+    <div *ngIf="item.id == valorID">
+        <img src="assets/img/{{item.nombre}}.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{item.nombre}}</h5>
+            <p class="card-text">Descripcion: <i>{{item.descripcion}}</i> </p>
+        </div>
+    </div>
+</div>
