@@ -39,7 +39,8 @@
                         routerLinkActive="active" routerLink="/Info">Información</button> <br>
 
                     <hr>
-                    <button type="button" (click)="agregarCarrito(item.id, item.precio)" class="btn btn-success">Comprar</button>
+                    <button type="button" (click)="agregarCarrito(item.id, item.precio)"
+                        class="btn btn-success">Comprar</button>
 
                 </td>
             </tr>
@@ -47,33 +48,16 @@
 
         </tbody>
     </table>
-    <label id="h3d" for="basic-url" class="form-label">Carrito de Compras</label>
-    <table class="table table-info ">
-        <thead>
 
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Acción</th>
-            </tr>
-        </thead>
-        <tbody *ngFor="let item of pinturasService.listita_pinturitas['pinturas']; index as i">
-            <!-- productosService.lista_productos['productos'] -->
-            <!-- *ngIf="item.nombre == buscado" -->
+    <label id="h3d" for="basic-url" class="form-label">Carrito de Compras y Pago</label>
 
-            <tr *ngFor="let item1 of carrito_Compras">
-                <th scope="row" *ngIf="item1 == (i+1)">{{item.id}}</th>
-                <td *ngIf="item1 == (i+1)">{{item.nombre}}</td>
-                <td *ngIf="item1 == (i+1)">${{item.precio}}</td>
-                <td *ngIf="item1 == (i+1)">
-                    <button type="button" (click)="eliminarDeCarrito(item1, item.precio)" class="btn btn-success">Eliminar</button>
-                </td>
-            </tr>
+    <app-base [Lista_Pintura]="pinturasService.listita_pinturitas['pinturas']" [carrito_Ids]="carrito_Compras" [total_Compra]="total"> </app-base>
+
+    
 
 
-        </tbody>
-    </table>
-    <label id="h3d" for="basic-url" class="form-label">Total a Pagar: ${{total}}</label>
 
+    
+    <!--   <app-productohijo [lista]="lista_Pint" [ejemplo]="Ejemplo"></app-productohijo> -->
+    
 </div>

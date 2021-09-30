@@ -1,4 +1,13 @@
-<div id="PromocionesCarousel1" class="carousel slide" data-bs-ride="carousel">
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+
+<app-modal (accionModal1)="capturarVariable($event)" [titulo]= "Titulo" [detalle]= "Detalle" [accion]= "Accion"> </app-modal>
+
+<!-- <div id="PromocionesCarousel1" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
             aria-current="true" aria-label="Slide 1"></button>
@@ -11,7 +20,8 @@
         <div class="carousel-item active">
             <img src="assets/img/completo.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h3>Completaso </h3> <h2> 2x1 </h2>
+                <h3>Completaso </h3>
+                <h2> 2x1 </h2>
                 <p>Solo por este fin de semana!</p>
             </div>
         </div>
@@ -38,4 +48,6 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
-</div>
+
+
+</div> -->

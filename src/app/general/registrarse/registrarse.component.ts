@@ -2,7 +2,7 @@ import { isEmptyExpression } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-registrarse',
+  selector: 'app-registrarsee',
   templateUrl: './registrarse.component.html',
   styleUrls: ['./registrarse.component.css']
 })

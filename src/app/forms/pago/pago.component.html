@@ -1,0 +1,40 @@
+<p>pago works!</p>
+
+<div>
+    <form (ngSubmit)="insertarDatosPago()">
+        <h2>Registro de Metodo de Pago</h2>
+        <div class="mb-3">
+            <label for="pais" class="form-label">Tipo Tarjeta</label>
+            <input [(ngModel)]="tipo_Tarjeta" name="tipo_Tarjeta" type="text" class="form-control" id="nombre" placeholder="País"
+                aria-describedby="nombreHelp">
+        </div>
+        <div class="mb-3">
+            <label for="calle" class="form-label">Nombre del dueño de la tarjeta</label>
+            <input [(ngModel)]="nombre_Tarjeta" name="nombre_Tarjeta" type="text" class="form-control" id="apellido"
+                placeholder="Calle" aria-describedby="apellidoHelp">
+        </div>
+        <div class="mb-3">
+            <label for="ciudad" class="form-label">Número de la tarjeta</label>
+            <input [(ngModel)]="num_Tarjeta" name="num_Tarjeta" type="text" class="form-control" id="email"
+                placeholder="Ciudad" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="region" class="form-label">Código de seguridad</label>
+            <input [(ngModel)]="cod_Tarjeta" name="cod_Tarjeta" type="text" class="form-control" id="password"
+                placeholder="Región">
+        </div>
+        <div class="mb-3">
+            <label for="codigo" class="form-label">Mes de expiración</label>
+            <input [(ngModel)]="mes_Exp" name="mes_Exp" type="number" class="form-control" id="password"
+                placeholder="Codigo Postal">
+        </div>
+        <div class="mb-3">
+            <label for="codigo" class="form-label">Año de expiración</label>
+            <input [(ngModel)]="ano_Exp" name="ano_Exp" type="number" class="form-control" id="password"
+                placeholder="Codigo Postal">
+        </div>
+        <button type="submit" class="btn btn-success">Registrar Datos de Pago</button>
+
+    </form>
+
+</div>

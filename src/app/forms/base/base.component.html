@@ -1,0 +1,78 @@
+<div class="d-flex align-items-start">
+    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home"
+            type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Resumen de Carro</button>
+        <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile"
+            type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Datos de Direccion</button>
+        <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages"
+            type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Datos de pago</button>
+        <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings"
+            type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Resumen de Pago</button>
+    </div>
+    <div class="tab-content" id="v-pills-tabContent">
+        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+            <table class="table table-info ">
+                <thead>
+
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Acción</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let item of Lista_Pintura; index as i">
+                    <!-- productosService.lista_productos['productos'] -->
+                    <!-- *ngIf="item.nombre == buscado" -->
+
+                    <tr *ngFor="let item1 of carrito_Ids">
+                        <th scope="row" *ngIf="item1 == (i+1)">{{item.id}}</th>
+                        <td *ngIf="item1 == (i+1)">{{item.nombre}}</td>
+                        <td *ngIf="item1 == (i+1)">${{item.precio}}</td>
+                        <td *ngIf="item1 == (i+1)">
+                            <button type="button" (click)="eliminarDeCarrito(item1, item.precio)"
+                                class="btn btn-success">Eliminar</button>
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+            <app-direccion> </app-direccion>
+        </div>
+        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+            <app-pago (accionPago)="capturadeTarjeta($event)"> </app-pago>
+        </div>
+        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+            <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="font-size:20px;">Datos de tarjeta</li>
+                    <li class="list-group-item">{{dictRecibo.Tarjeta}}</li>
+                    <li class="list-group-item">{{dictRecibo.Nombre}}</li>
+                    <li type="password" class="list-group-item">{{dictRecibo.Numero}}</li>
+                    <li class="list-group-item">{{dictRecibo.Codigo}}</li>
+                    <li class="list-group-item">Fecha: {{dictRecibo.Mes}} / {{dictRecibo.Ano}}</li>
+
+                </ul>
+                <div class="card-footer">
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="font-size:20px;">Datos de Dirección de envío</li>
+                    <li class="list-group-item"></li>
+                    <li class="list-group-item"></li>
+                    <li type="password" class="list-group-item"></li>
+                    <li class="list-group-item"></li>
+                    <li class="list-group-item">  </li>
+
+                </ul>
+                <div class="card-footer" style="font-size:25px;">
+                    Total Compra: {{total_Compra}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
